@@ -17,6 +17,8 @@ class CreateSitiosTable extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('descripcion');
+            $table->unsignedBigInteger('ciudad_id')->nullable();
+            $table->foreign('ciudad_id')->references('id')->on('ciudads')->ondelete('set null')->onupdate('cascade');
             $table->timestamps();
         });
     }
