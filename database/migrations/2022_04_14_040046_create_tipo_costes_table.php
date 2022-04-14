@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCiudadsTable extends Migration
+class CreateTipoCostesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateCiudadsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ciudads', function (Blueprint $table) {
+        Schema::create('tipo_costes', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->unsignedBigInteger('pais_id');
-            $table->foreign('pais_id')->references('id')->on('pais')->ondelete('cascade')->onupdate('cascade');
-
+            $table->tinyInteger('costo');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateCiudadsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ciudads');
+        Schema::dropIfExists('tipo_costes');
     }
 }
