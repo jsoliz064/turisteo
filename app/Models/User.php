@@ -44,4 +44,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //relacion uno a muchos inversa
+    public function ciudad(){
+        return $this->belongsTo('App\Models\Ciudad');
+    }
 }

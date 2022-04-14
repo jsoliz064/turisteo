@@ -18,7 +18,7 @@ class CreateInformacionsTable extends Migration
             $table->string('ubicacion');
             $table->string('enlace_foto');
             $table->unsignedBigInteger('sitio_id')->nullable();
-            $table->foreign('sitio_id')->references('id')->on('sitio')->ondelete('cascade')->onupdate('cascade');
+            $table->foreign('sitio_id')->references('id')->on('sitios')->ondelete('cascade')->onupdate('cascade');
             $table->timestamps();
         });
     }
