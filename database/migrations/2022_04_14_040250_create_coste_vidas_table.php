@@ -15,9 +15,9 @@ class CreateCosteVidasTable extends Migration
     {
         Schema::create('coste_vidas', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('Total');
+            $table->tinyInteger('total');
             $table->unsignedBigInteger('tipo_costes_id');
-            $table->foreign('tipo_costes_id')->references('id')->on('tipo_costes_id')->ondelete('cascade')->onupdate('cascade');
+            $table->foreign('tipo_costes_id')->references('id')->on('tipo_costes')->ondelete('cascade')->onupdate('cascade');
             $table->timestamps();
         });
     }
